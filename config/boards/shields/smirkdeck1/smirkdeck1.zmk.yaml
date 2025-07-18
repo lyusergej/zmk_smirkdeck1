@@ -2,7 +2,7 @@ file_format: "1"
 id: smirkdeck1
 name: smirkdeck1
 type: shield
-url: https://github.com/cyril279/keyboards/tree/main/revlp
+url: https://github.com/lyusergej/zmk_smirkdeck1
 requires:
   - pro_micro
 features:

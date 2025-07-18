@@ -22,3 +22,5 @@
 include:
   - board: nice_nano_v2
     shield: smirkdeck1
+  - board: nice_nano_v2
+    shield: settings_reset
