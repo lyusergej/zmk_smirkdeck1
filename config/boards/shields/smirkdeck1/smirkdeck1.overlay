@@ -1,9 +1,9 @@
 #include "smirkdeck1.dtsi"
 
-    kscan0: kscan_0 {
+    kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
         diode-direction = "col2row";
+        wakeup-source;
 
         row-gpios
             = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D10
