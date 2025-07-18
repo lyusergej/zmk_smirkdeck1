@@ -1,2 +1,3 @@
-config SHIELD_SMIRKDECK1
+config SHIELD_SMIRKDECK
     def_bool $(shields_list_contains,smirkdeck1)
+    select SPI
