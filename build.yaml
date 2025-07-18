@@ -17,6 +17,7 @@
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
 #
-board: nice_nano_v2
-shield: smirkdeck1
 ---
+include:
+  - board: nice_nano_v2
+    shield: smirkdeck1
