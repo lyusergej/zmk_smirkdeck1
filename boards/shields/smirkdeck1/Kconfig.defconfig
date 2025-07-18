@@ -1,6 +1,4 @@
-# SPDX-License-Identifier: MIT
-
-if SHIELD_SMIRKDECK
+if SHIELD_SMIRKDECK1
 
 config ZMK_KEYBOARD_NAME
     default "smirkdeck1"
