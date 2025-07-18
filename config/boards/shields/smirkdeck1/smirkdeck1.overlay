@@ -1,16 +1,11 @@
 #include "smirkdeck1.dtsi"
 
+/ {
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
 
-        row-gpios
-            = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D10
-            , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D8
-            , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D16
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D9
-            ;
         col-gpios
             = <&gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D7
             , <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D6
@@ -25,4 +20,12 @@
             , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D19
             , <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D15
             ;
+
+        row-gpios
+            = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D10
+            , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D8
+            , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D16
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // D9
+            ;
     };
+};
