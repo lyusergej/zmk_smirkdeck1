@@ -1,12 +1,12 @@
-#include <dt-bindings/zmk/matrix-transform.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+      //  zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
     };
 
-    default_transform: keymap_transform_0 {
+    default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         rows = <4>;
         columns = <12>;
@@ -21,6 +21,7 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
+        wakeup-source;
 
  
         row-gpios
