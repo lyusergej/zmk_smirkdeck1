@@ -4,6 +4,6 @@ name: smirkdeck1
 type: shield
 url: https://github.com/lyusergej/zmk_smirkdeck1
 requires:
-  - pro_micro
+  - nice_nano_v2
 features:
   - keys
