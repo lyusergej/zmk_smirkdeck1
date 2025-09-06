@@ -1,3 +1,13 @@
 board: [seeeduino_xiao_ble]
 shield: [revxlp]
 
+<<<<<<< HEAD
+=======
+#
+---
+include:
+  - board: nice_nano
+    shield: smirkdeck1
+  - board: nice_nano
+    shield: settings_reset
+>>>>>>> parent of 832e959 (finV2)
