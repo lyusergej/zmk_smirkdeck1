@@ -1,9 +1,0 @@
-file_format: "1"
-id: smirkdeck1
-name: smirkdeck1
-type: shield
-url: https://github.com/lyusergej/zmk_smirkdeck1
-requires:
-  - nice_nano_v2
-features:
-  - keys

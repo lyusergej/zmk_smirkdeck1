@@ -1,6 +1,0 @@
-if SHIELD_SMIRKDECK1
-
-config ZMK_KEYBOARD_NAME
-    default "smirkdeck1"
-
-endif
