@@ -7,10 +7,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 
-&gtips_smirkdeck1_layout {
-    transform = <&default_transform>;
-};
-
 / {
     chosen {
         zmk,kscan = &kscan0;
