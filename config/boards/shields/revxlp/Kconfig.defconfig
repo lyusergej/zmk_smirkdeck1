@@ -1,11 +1,9 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_REVXLP
+if SHIELD_REVIUNG41
 
 config ZMK_KEYBOARD_NAME
-    default "revxlp"
-
-
+    default "Reviung41"
 
 endif
