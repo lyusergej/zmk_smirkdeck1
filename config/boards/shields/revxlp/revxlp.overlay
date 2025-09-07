@@ -68,28 +68,27 @@
     };
 
     // Скан матрицы
-    kscan0: kscan_0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-        diode-direction = "col2row";
+kscan0: kscan_0 {
+    compatible = "zmk,kscan-gpio-matrix";
+    label = "KSCAN";
+    diode-direction = "col2row";
 
-        col-gpios =
-            <&shifter 7 GPIO_ACTIVE_HIGH>,
-            <&shifter 6 GPIO_ACTIVE_HIGH>,
-            <&shifter 5 GPIO_ACTIVE_HIGH>,
-            <&shifter 4 GPIO_ACTIVE_HIGH>,
-            <&shifter 3 GPIO_ACTIVE_HIGH>,
-            <&shifter 2 GPIO_ACTIVE_HIGH>
-        ;
+    col-gpios =
+        <&shifter 7 GPIO_ACTIVE_HIGH>,
+        <&shifter 6 GPIO_ACTIVE_HIGH>,
+        <&shifter 5 GPIO_ACTIVE_HIGH>,
+        <&shifter 4 GPIO_ACTIVE_HIGH>,
+        <&shifter 3 GPIO_ACTIVE_HIGH>,
+        <&shifter 2 GPIO_ACTIVE_HIGH>
+    ;
 
-        row-gpios =
-            <&gpio 0 0 GPIO_ACTIVE_HIGH>,
-            <&gpio 0 6 GPIO_ACTIVE_HIGH>,
-            <&gpio 0 1 GPIO_ACTIVE_HIGH>,
-            <&gpio 0 5 GPIO_ACTIVE_HIGH>,
-            <&gpio 0 2 GPIO_ACTIVE_HIGH>,
-            <&gpio 0 4 GPIO_ACTIVE_HIGH>,
-            <&gpio 0 3 GPIO_ACTIVE_HIGH>
-        ;
-    };
+    row-gpios =
+        <&zephyr_gpio 0 0 GPIO_ACTIVE_HIGH>, 
+        <&zephyr_gpio 0 6 GPIO_ACTIVE_HIGH>,
+        <&zephyr_gpio 0 1 GPIO_ACTIVE_HIGH>,
+        <&zephyr_gpio 0 5 GPIO_ACTIVE_HIGH>,
+        <&zephyr_gpio 0 2 GPIO_ACTIVE_HIGH>,
+        <&zephyr_gpio 0 4 GPIO_ACTIVE_HIGH>,
+        <&zephyr_gpio 0 3 GPIO_ACTIVE_HIGH>
+    ;
 };
