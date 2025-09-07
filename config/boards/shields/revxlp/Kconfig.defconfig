@@ -6,11 +6,6 @@ if SHIELD_REVXLP
 config ZMK_KEYBOARD_NAME
     default "revxlp"
 
-if ZMK_BACKLIGHT
 
-config LED_GPIO
-    default y
-
-endif # ZMK_BACKLIGHT
 
 endif
