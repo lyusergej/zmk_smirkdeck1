@@ -1,16 +1,35 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-// Отключаем ненужное (если было)
-// &xiao_serial — удаляем, его нет
-
+// Включаем SPI1
 &spi1 {
     status = "okay";
-    pinctrl-0 = <&spi1_sck &spi1_mosi &spi1_miso>;
+    pinctrl-0 = <&spi1_sck_miso_mosi>;
+};
+
+// Объявляем пины для SPI1
+&pinctrl {
+    spi1_default: spi1_default {
+        group1 {
+            psels = <NRF_PSEL(SPI_SCK, 1, 15)
+                     NRF_PSEL(SPI_MOSI, 1, 13)
+                     NRF_PSEL(SPI_MISO, 1, 14)>;
+            // На nice!nano v2: P1.15=SCK, P1.13=MOSI, P1.14=MISO
+        };
+    };
+};
+
+// Назначаем pinctrl-0
+&spi1 {
+    pinctrl-0 = <&spi1_default>;
+};
+
+// 74HC595 через SPI
+&spi1 {
     shifter: 595@0 {
         compatible = "zmk,gpio-74x595";
         status = "okay";
-        spi-max-frequency = <200000>;
         reg = <0>;
+        spi-max-frequency = <200000>;
         gpio-controller;
         #gpio-cells = <2>;
         ngpios = <8>;
@@ -25,6 +44,7 @@
         zmk,backlight = &backlight;
     };
 
+    // Подсветка
     backlight: backlight_leds {
         compatible = "gpio-leds";
         led_mosfet {
@@ -33,6 +53,7 @@
         };
     };
 
+    // Трансформация матрицы
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <6>;
@@ -45,6 +66,7 @@
         >;
     };
 
+    // Скан матрицы
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
