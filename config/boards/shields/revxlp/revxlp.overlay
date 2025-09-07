@@ -1,40 +1,35 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 // Включаем SPI1
-// &spi1 {
-//     status = "okay";
-//     pinctrl-0 = <&spi1_sck_miso_mosi>;
-//  };
+&spi1 {
+    status = "okay";
+    pinctrl-0 = <&spi1_default>;
+};
 
 // Объявляем пины для SPI1
-//  &pinctrl {
-//     spi1_default: spi1_default {
-//         group1 {
-//             psels = <
-//                 NRF_PSEL(SPI_SCK, 1, 15),
-//                 NRF_PSEL(SPI_MOSI, 1, 13),
-//                 NRF_PSEL(SPI_MISO, 1, 14)
-//             >;
-//         };
-//     };
-// };
-
-// Назначаем pinctrl-0
-&spi1 {
-    pinctrl-0 = <&spi1_default>;
+&pinctrl {
+    spi1_default: spi1_default {
+        group1 {
+            psels = <
+                NRF_PSEL(SPI_SCK, 1, 15),
+                NRF_PSEL(SPI_MOSI, 1, 13),
+                NRF_PSEL(SPI_MISO, 1, 14)
+            >;
+        };
+    };
 };
 
 // 74HC595 через SPI
 &spi1 {
     shifter: 595@0 {
-        compatible = "zmk,gpio-74x595";
+        compatible = "zmk,gpio-shifter-out";  // ✅ исправлено
         status = "okay";
         reg = <0>;
         spi-max-frequency = <200000>;
         gpio-controller;
         #gpio-cells = <2>;
         ngpios = <8>;
-        cs-gpios = <&gpio 0 9 GPIO_ACTIVE_LOW>;  // P0.09
+        cs-gpios = <&zephyr_gpio 0 9 GPIO_ACTIVE_LOW>;  // ✅ &zephyr_gpio
     };
 };
 
@@ -49,7 +44,7 @@
     backlight: backlight_leds {
         compatible = "gpio-leds";
         led_mosfet {
-            gpios = <&gpio 0 7 GPIO_ACTIVE_LOW>;  // P0.07
+            gpios = <&zephyr_gpio 0 7 GPIO_ACTIVE_LOW>;  // ✅ &zephyr_gpio
             label = "Backlight LED 0";
         };
     };
@@ -68,27 +63,28 @@
     };
 
     // Скан матрицы
-kscan0: kscan_0 {
-    compatible = "zmk,kscan-gpio-matrix";
-    label = "KSCAN";
-    diode-direction = "col2row";
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
 
-    col-gpios =
-        <&shifter 7 GPIO_ACTIVE_HIGH>,
-        <&shifter 6 GPIO_ACTIVE_HIGH>,
-        <&shifter 5 GPIO_ACTIVE_HIGH>,
-        <&shifter 4 GPIO_ACTIVE_HIGH>,
-        <&shifter 3 GPIO_ACTIVE_HIGH>,
-        <&shifter 2 GPIO_ACTIVE_HIGH>
-    ;
+        col-gpios =
+            <&shifter 7 GPIO_ACTIVE_HIGH>,
+            <&shifter 6 GPIO_ACTIVE_HIGH>,
+            <&shifter 5 GPIO_ACTIVE_HIGH>,
+            <&shifter 4 GPIO_ACTIVE_HIGH>,
+            <&shifter 3 GPIO_ACTIVE_HIGH>,
+            <&shifter 2 GPIO_ACTIVE_HIGH>
+        ;
 
-    row-gpios =
-        <&zephyr_gpio 0 0 GPIO_ACTIVE_HIGH>, 
-        <&zephyr_gpio 0 6 GPIO_ACTIVE_HIGH>,
-        <&zephyr_gpio 0 1 GPIO_ACTIVE_HIGH>,
-        <&zephyr_gpio 0 5 GPIO_ACTIVE_HIGH>,
-        <&zephyr_gpio 0 2 GPIO_ACTIVE_HIGH>,
-        <&zephyr_gpio 0 4 GPIO_ACTIVE_HIGH>,
-        <&zephyr_gpio 0 3 GPIO_ACTIVE_HIGH>
-    ;
+        row-gpios =
+            <&zephyr_gpio 0 0 GPIO_ACTIVE_HIGH>,
+            <&zephyr_gpio 0 6 GPIO_ACTIVE_HIGH>,
+            <&zephyr_gpio 0 1 GPIO_ACTIVE_HIGH>,
+            <&zephyr_gpio 0 5 GPIO_ACTIVE_HIGH>,
+            <&zephyr_gpio 0 2 GPIO_ACTIVE_HIGH>,
+            <&zephyr_gpio 0 4 GPIO_ACTIVE_HIGH>,
+            <&zephyr_gpio 0 3 GPIO_ACTIVE_HIGH>
+        ;
+    };
 };
