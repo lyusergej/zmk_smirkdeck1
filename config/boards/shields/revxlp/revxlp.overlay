@@ -1,23 +1,23 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 // Включаем SPI1
-&spi1 {
-    status = "okay";
-    pinctrl-0 = <&spi1_sck_miso_mosi>;
-};
+// &spi1 {
+//     status = "okay";
+//     pinctrl-0 = <&spi1_sck_miso_mosi>;
+//  };
 
 // Объявляем пины для SPI1
-&pinctrl {
-    spi1_default: spi1_default {
-        group1 {
-            psels = <
-                NRF_PSEL(SPI_SCK, 1, 15),
-                NRF_PSEL(SPI_MOSI, 1, 13),
-                NRF_PSEL(SPI_MISO, 1, 14)
-            >;
-        };
-    };
-};
+//  &pinctrl {
+//     spi1_default: spi1_default {
+//         group1 {
+//             psels = <
+//                 NRF_PSEL(SPI_SCK, 1, 15),
+//                 NRF_PSEL(SPI_MOSI, 1, 13),
+//                 NRF_PSEL(SPI_MISO, 1, 14)
+//             >;
+//         };
+//     };
+// };
 
 // Назначаем pinctrl-0
 &spi1 {
