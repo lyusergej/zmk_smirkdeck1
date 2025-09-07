@@ -10,8 +10,8 @@
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPI_SCK, 1, 15)
-                     NRF_PSEL(SPI_MOSI, 1, 13)
+            psels = <NRF_PSEL(SPI_SCK, 1, 15),
+                     NRF_PSEL(SPI_MOSI, 1, 13),
                      NRF_PSEL(SPI_MISO, 1, 14)>;
             // На nice!nano v2: P1.15=SCK, P1.13=MOSI, P1.14=MISO
         };
