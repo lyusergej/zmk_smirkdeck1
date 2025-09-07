@@ -8,11 +8,6 @@
 
 
 / {
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &gtips_reviung41_layout;
-    };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <6>;
