@@ -16,8 +16,6 @@
         power_combo {
             bindings = <&ext_power EP_TOG>;
             key-positions = <0 11>;
-            timeout-ms = <2>;
-            require-prior-idle-ms = <4>;
         };
 
         MO_3 {
