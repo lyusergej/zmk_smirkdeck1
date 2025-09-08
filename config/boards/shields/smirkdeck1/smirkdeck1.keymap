@@ -52,10 +52,10 @@
 
         raise_layer {
             bindings = <
-&trans    &kp KP_DIVIDE  &kp KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans        &kp C_MUTE    &kp C_VOLUME_UP  &kp C_PLAY    &kp DELETE    &kp BACKSPACE
-&kp CLCK  &kp KP_PLUS    &kp KP_MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans        &kp C_PREV    &kp C_VOL_DN     &kp C_PAUSE   &trans        &kp ENTER
-&trans    &kp KP_DOT     &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4  &trans
-&trans    &trans         &trans           &trans           &trans           &trans           &trans        &trans        &trans           &trans        &trans        &trans
+&trans    &kp KP_DIVIDE  &kp KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans        &kp C_MUTE    &kp C_VOLUME_UP  &kp C_PLAY    &kp DELETE         &kp BACKSPACE
+&kp CLCK  &kp KP_PLUS    &kp KP_MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans        &kp C_PREV    &kp C_VOL_DN     &kp C_PAUSE   &ext_power EP_TOG  &kp ENTER
+&trans    &kp KP_DOT     &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4       &ext_power EP_OFF
+&trans    &trans         &trans           &trans           &trans           &trans           &trans        &trans        &trans           &trans        &trans             &ext_power EP_ON
             >;
         };
 
